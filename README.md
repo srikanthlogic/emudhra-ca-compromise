@@ -20,6 +20,9 @@ CashlessConsumer consumer guide and public record for the October 2026 eMudhra C
 
 ## Deploy
 
-Plain static HTML/CSS, no build step. Push to `main` → `.github/workflows/pages.yml` deploys to GitHub Pages (first run enables Pages via `configure-pages` `enablement: true`).
+Plain static HTML/CSS, no build step. Two paths:
+
+1. **Deploy from branch (current):** enable once in repo Settings → Pages → Source: *Deploy from a branch* → `main` / `(root)`. Site: https://srikanthlogic.github.io/emudhra-ca-compromise/
+2. **Actions deploy (needs workflow scope):** `.github/workflows/pages.yml` is prepared locally (not pushable via the Pipedream OAuth token, which lacks the `workflow` scope). Once Pages is enabled or a workflow-scoped token is connected, push it and every push to `main` redeploys (configure-pages `enablement: true`).
 
 Voice rule: all public copy on this site must pass the CashlessConsumer comms-voice gate — no agentic tells (run `tells.py` on extracted text before publishing changes).
