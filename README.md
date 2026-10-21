@@ -1,2 +1,25 @@
 # emudhra-ca-compromise
-CashlessConsumer consumer guide + public statement on the eMudhra CA key compromise (October 2026): eight certificates with guessable private keys, what it means for consumers, and the open letter to RBI and MeitY.
+
+CashlessConsumer consumer guide and public record for the October 2026 eMudhra CA key compromise: eight intermediate certificates whose private keys carried 3–8 bits of randomness (one was literally `4`), reported 17 Oct 2026, distrusted by Firefox/Chrome within hours and Apple on 19 Oct — with no public word from any Indian authority.
+
+**Live site:** https://srikanthlogic.github.io/emudhra-ca-compromise/
+
+## Pages
+
+| File | What it is |
+| --- | --- |
+| `index.html` | Consumer guide: what happened, timeline, who is protected/exposed, do-this-today checklist, verified India exposure, curated video explainers, sources |
+| `statement.html` | CashlessConsumer public statement (v3) |
+| `letter.html` | Open letter to RBI and MeitY (CC CCA, CERT-In, IDRBT, UIDAI, GeM, NPCI, browser root programs, eMudhra) |
+
+## Sources of truth
+
+- Statement + letter text: `statement-src.md` / `letter-src.md` (canonical master: `Kaarana/notes/2026-10-21-emudhra-statement-open-letter-rbi-meity.md` in the Zo workspace, which must pass `Skills/cc-comms-voice/scripts/tells.py`)
+- Rebuild the HTML doc pages: `pandoc statement-src.md -f markdown -t html` → body → `python3 build_pages.py` (assembles around the site template)
+- Research basis: Kaarana explainer https://cashlessconsumer.zo.space/kaarana/2026-10-21-emudhra-ca-compromise and desk verification (live TLS handshakes, 20–21 Oct 2026)
+
+## Deploy
+
+Plain static HTML/CSS, no build step. Push to `main` → `.github/workflows/pages.yml` deploys to GitHub Pages (first run enables Pages via `configure-pages` `enablement: true`).
+
+Voice rule: all public copy on this site must pass the CashlessConsumer comms-voice gate — no agentic tells (run `tells.py` on extracted text before publishing changes).
