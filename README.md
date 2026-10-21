@@ -11,6 +11,7 @@ CashlessConsumer consumer guide and public record for the October 2026 eMudhra C
 | `index.html` | Consumer guide: what happened, timeline, who is protected/exposed, do-this-today checklist, verified India exposure, curated video explainers, sources |
 | `statement.html` | CashlessConsumer public statement (v3) |
 | `letter.html` | Open letter to RBI and MeitY (CC CCA, CERT-In, IDRBT, UIDAI, GeM, NPCI, browser root programs, eMudhra) |
+| `company.html` | Corporate history of eMudhra: people, licence, timeline, business lines, listing, acquisitions, who profits, what broke |
 
 ## Sources of truth
 
